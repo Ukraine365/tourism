@@ -801,13 +801,17 @@
         
         @media (max-width: 768px) {
             .chat-toggle {
-                padding: 10px 16px;
-                font-size: 0.85rem;
-                gap: 6px;
+                padding: 12px 20px;
+                font-size: 0.9rem;
+                gap: 8px;
+                width: 45px;
+                height: 45px;
+                border-radius: 50%;
+                justify-content: center;
             }
             
             .chat-toggle i {
-                font-size: 1rem;
+                font-size: 1.2rem;
             }
             
             .chat-toggle span {
@@ -817,6 +821,24 @@
             .chat-toggle:hover {
                 transform: translateY(-1px);
             }
+        }
+        
+        .chat-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .chat-overlay.active {
+            display: block;
+            opacity: 1;
         }
         
         .chat-container {
@@ -832,6 +854,7 @@
             flex-direction: column;
             overflow: hidden;
             transition: all 0.3s ease;
+            z-index: 1000;
         }
         
         .chat-container.active {
@@ -847,6 +870,30 @@
             to {
                 transform: translateY(0);
                 opacity: 1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .chat-container {
+                bottom: 0;
+                right: 0;
+                width: 100%;
+                height: 80vh;
+                border-radius: 20px 20px 0 0;
+            }
+            
+            .chat-overlay {
+                display: none;
+                opacity: 0;
+            }
+            
+            .chat-overlay.active {
+                display: block;
+                opacity: 1;
+            }
+            
+            body.chat-open {
+                overflow: hidden;
             }
         }
         
@@ -1159,6 +1206,7 @@
     
     <!-- Чат-бот -->
     <div class="chat-bot">
+        <div class="chat-overlay" id="chat-overlay"></div>
         <button class="chat-toggle" id="chat-toggle">
             <i class="fas fa-comments"></i>
             <span class="lang-uk">Більше інформації</span>
@@ -2034,66 +2082,32 @@
         const chatInput = document.getElementById('chat-input-uk');
         const sendMessage = document.getElementById('send-message');
         const chatMessages = document.getElementById('chat-messages');
-        
-        // Вбудовуємо дані про дестинації безпосередньо в код
-        const destinationsData = {
-            "destinations": [
-                {
-                    "id": 1,
-                    "name": "Печера Атлантида",
-                    "name_en": "Cave 'Atlantis'",
-                    "description": "Унікальна печера з кристалами гіпсу.",
-                    "description_en": "Unique cave with gypsum crystals.",
-                    "detailed_info": {
-                        "uk": {
-                            "history": "Печера Атлантида була відкрита в 1969 році. Її назва походить від грецької міфології, оскільки печера нагадує затонуле місто.",
-                            "features": "Печера має довжину понад 2 км і включає численні зали з кристалами гіпсу, сталактитами та сталагмітами.",
-                            "best_time": "Найкращий час для відвідування - з травня по вересень, коли температура в печері комфортна.",
-                            "activities": "Екскурсії, фотографування, спостереження за кристалами.",
-                            "tips": "Обов'язково взяти теплий одяг та зручне взуття. Фотографування дозволено."
-                        },
-                        "en": {
-                            "history": "The Atlantis Cave was discovered in 1969. Its name comes from Greek mythology, as the cave resembles a sunken city.",
-                            "features": "The cave is over 2 km long and includes numerous halls with gypsum crystals, stalactites, and stalagmites.",
-                            "best_time": "The best time to visit is from May to September, when the temperature in the cave is comfortable.",
-                            "activities": "Guided tours, photography, crystal observation.",
-                            "tips": "Be sure to bring warm clothes and comfortable shoes. Photography is allowed."
-                        }
-                    }
-                },
-                {
-                    "id": 2,
-                    "name": "Тараканівський форт",
-                    "name_en": "Tarakaniv Fort",
-                    "description": "Загадкова покинута фортеця XIX століття.",
-                    "description_en": "Mysterious abandoned fortress of the 19th century.",
-                    "detailed_info": {
-                        "uk": {
-                            "history": "Форт був побудований в 1890 році як частина оборонної системи Російської імперії. Під час Першої світової війни використовувався як військова фортеця.",
-                            "features": "Форт має підземні ходи, казарми, порохові погреби та систему вентиляції. Архітектура поєднує елементи романського та готичного стилів.",
-                            "best_time": "Рекомендовано відвідувати з квітня по жовтень. Взимку доступ може бути обмежений.",
-                            "activities": "Екскурсії, фотографування, дослідження підземних ходів.",
-                            "tips": "Взяти з собою джерело світла та зручне взуття. Будьте обережні при дослідженні підземних ходів."
-                        },
-                        "en": {
-                            "history": "The fort was built in 1890 as part of the Russian Empire's defense system. During World War I, it was used as a military fortress.",
-                            "features": "The fort has underground passages, barracks, powder magazines, and a ventilation system. The architecture combines Romanesque and Gothic elements.",
-                            "best_time": "Recommended to visit from April to October. Access may be limited in winter.",
-                            "activities": "Guided tours, photography, exploring underground passages.",
-                            "tips": "Bring a light source and comfortable shoes. Be careful when exploring underground passages."
-                        }
-                    }
-                }
-            ]
-        };
+        const chatOverlay = document.getElementById('chat-overlay');
+        const isMobile = window.innerWidth <= 768;
 
         chatToggle.addEventListener('click', () => {
             chatContainer.classList.add('active');
+            if (isMobile) {
+                chatOverlay.classList.add('active');
+                document.body.classList.add('chat-open');
+            }
         });
 
         closeChat.addEventListener('click', () => {
             chatContainer.classList.remove('active');
+            if (isMobile) {
+                chatOverlay.classList.remove('active');
+                document.body.classList.remove('chat-open');
+            }
         });
+
+        if (isMobile) {
+            chatOverlay.addEventListener('click', () => {
+                chatContainer.classList.remove('active');
+                chatOverlay.classList.remove('active');
+                document.body.classList.remove('chat-open');
+            });
+        }
 
         function addMessage(message, isUser = false) {
             const messageDiv = document.createElement('div');
