@@ -769,9 +769,15 @@
 
         .chat-bot {
             position: fixed;
-            bottom: 20px;
+            bottom: 40px;
             right: 20px;
             z-index: 1000;
+        }
+        
+        @media (max-width: 768px) {
+            .chat-bot {
+                bottom: 20px;
+            }
         }
         
         .chat-toggle {
@@ -804,14 +810,27 @@
                 padding: 12px 20px;
                 font-size: 0.9rem;
                 gap: 8px;
-                width: 45px;
-                height: 45px;
+                width: 55px;
+                height: 55px;
                 border-radius: 50%;
                 justify-content: center;
+                position: relative;
+            }
+            
+            .chat-toggle::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                background: linear-gradient(135deg, var(--primary), var(--secondary));
+                animation: pulse 2s infinite;
+                opacity: 0.4;
+                z-index: -1;
             }
             
             .chat-toggle i {
-                font-size: 1.2rem;
+                font-size: 1.4rem;
             }
             
             .chat-toggle span {
@@ -820,6 +839,21 @@
             
             .chat-toggle:hover {
                 transform: translateY(-1px);
+            }
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.4;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0.4;
             }
         }
         
