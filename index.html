@@ -2038,7 +2038,7 @@
             const isMobile = window.innerWidth <= 768;
             
             // Створюємо карту, центровану на Україні
-            map = L.map('map').setView([48.5, 31.0], isMobile ? 5.5 : 6);
+            map = L.map('map').setView([48.5, 31.0], isMobile ? 5.2 : 6);
             
             // Додаємо базовий шар карти
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -2355,7 +2355,7 @@
             if (map) {
                 const isMobile = window.innerWidth <= 768;
                 if (isMobile) {
-                    map.setView([48.5, 31.0], 5.5);
+                    map.setView([48.5, 31.0], 5.2);
                 } else {
                     map.setView([49.0, 31.0], 6);
                 }
@@ -2366,7 +2366,7 @@
             if (map) {
                 const isMobile = window.innerWidth <= 768;
                 if (isMobile) {
-                    map.setView([48.5, 31.0], 5.5);
+                    map.setView([48.5, 31.0], 5.2);
                 } else {
                     map.setView([49.0, 31.0], 6);
                 }
