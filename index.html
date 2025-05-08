@@ -1158,6 +1158,959 @@
                 font-size: 0.9rem;
             }
         }
+
+        .about-us {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, var(--light) 0%, white 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-us-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-us-text h2 {
+            margin-bottom: 2rem;
+            color: var(--primary);
+            font-size: 2.5rem;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .about-us-text h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .about-us-text p {
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-us-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s ease;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: rotateY(180deg);
+        }
+
+        .feature-card h3 {
+            color: var(--text-primary);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 968px) {
+            .about-us-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .about-us-features {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-us {
+                padding: 4rem 0;
+            }
+
+            .about-us-text h2 {
+                font-size: 2rem;
+            }
+
+            .about-us-text p {
+                font-size: 1rem;
+            }
+
+            .feature-card {
+                padding: 1.5rem;
+            }
+
+            .feature-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+        }
+
+        .donate-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px; /* Adjusted gap for a slightly smaller button */
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: white;
+            padding: 12px 24px; /* Adjusted padding for a slightly smaller button */
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem; /* Adjusted font size for a slightly smaller button */
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .donate-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .donate-btn i {
+            font-size: 1.1rem; /* Adjusted font size for a slightly smaller button */
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .donate-btn {
+                padding: 10px 20px; /* Adjusted padding for a slightly smaller button on mobile */
+                font-size: 0.9rem; /* Adjusted font size for a slightly smaller button on mobile */
+            }
+        }
+
+        .donate-section {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        .donate-content {
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .donate-content h2 {
+            color: #2196F3;
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .donate-content p {
+            color: #64748B;
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto 48px;
+        }
+
+        .currency-selector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 48px;
+        }
+
+        .currency-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            border: 1px solid #E2E8F0;
+            border-radius: 100px;
+            background: transparent;
+            color: #64748B;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .currency-btn:hover {
+            border-color: #2196F3;
+            color: #2196F3;
+        }
+
+        .currency-btn.active {
+            background: #2196F3;
+            border-color: #2196F3;
+            color: white;
+        }
+
+        .donate-cards-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .donate-card {
+            display: none;
+            background: white;
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            max-width: 400px;
+            width: 100%;
+            margin: 0 auto;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .donate-card.active {
+            display: block;
+        }
+
+        .donate-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 24px;
+            background: #39B5E0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+
+        .donate-card h3 {
+            color: #1E293B;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .wallet-address {
+            background: #F8FAFC;
+            padding: 16px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 14px;
+            color: #475569;
+            word-break: break-all;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .copy-address-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: #2196F3;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            width: 100%;
+            transition: all 0.2s ease;
+        }
+
+        .copy-address-btn:hover {
+            background: #1E88E5;
+        }
+
+        .copy-address-btn.copied {
+            background: #66C147;
+        }
+
+        .copy-address-btn i {
+            font-size: 16px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .donate-section {
+                padding: 60px 16px;
+            }
+
+            .donate-content h2 {
+                font-size: 36px;
+            }
+
+            .donate-content p {
+                font-size: 16px;
+                margin-bottom: 32px;
+            }
+
+            .currency-selector {
+                gap: 8px;
+            }
+
+            .currency-btn {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+
+            .donate-card {
+                padding: 24px;
+            }
+        }
+
+        .bnb-icon {
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .solana-icon {
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .tron-icon {
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .usdt-icon {
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .donate-options {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .currency-selector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .currency-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            border: 2px solid var(--primary);
+            border-radius: 100px;
+            background: transparent;
+            color: var(--primary);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .currency-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .currency-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .donate-cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .donate-card {
+            display: none;
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s ease;
+        }
+
+        .donate-card.active {
+            display: block;
+        }
+
+        .donate-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .currency-selector {
+                gap: 0.5rem;
+            }
+
+            .currency-btn {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+        }
+
+        .useful-links {
+            padding: 80px 0;
+            background: #F8FAFC;
+        }
+
+        .useful-links-content {
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .useful-links-content h2 {
+            color: #2196F3;
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .useful-links-content > p {
+            color: #64748B;
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto 48px;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            padding: 0 16px;
+        }
+
+        .link-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .link-content {
+            padding: 32px 24px;
+        }
+
+        .link-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 24px;
+            background: #2196F3;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+
+        .link-content h3 {
+            color: #1E293B;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .link-content p {
+            color: #64748B;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .link-btn {
+            padding: 16px 24px;
+            background: #F8FAFC;
+            border-top: 1px solid #E2E8F0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #2196F3;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .link-card:hover .link-btn {
+            background: #2196F3;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .useful-links {
+                padding: 60px 0;
+            }
+
+            .useful-links-content h2 {
+                font-size: 36px;
+            }
+
+            .useful-links-content > p {
+                font-size: 16px;
+                margin-bottom: 32px;
+            }
+
+            .links-grid {
+                grid-template-columns: 1fr;
+                padding: 0 16px;
+            }
+
+            .link-content {
+                padding: 24px 16px;
+            }
+        }
+
+        .faq-section {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .faq-section h2 {
+            color: #2196F3;
+            font-size: 48px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .section-description {
+            color: #64748B;
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 48px;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 16px;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 24px;
+            background: #fff;
+            border: none;
+            text-align: left;
+            font-size: 18px;
+            font-weight: 500;
+            color: #1E293B;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #F8FAFC;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+            font-size: 16px;
+            color: #64748B;
+        }
+
+        .faq-item.active .faq-question {
+            background: #F8FAFC;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: #F8FAFC;
+        }
+
+        .faq-answer p {
+            padding: 24px 32px;
+            margin: 0;
+            color: #64748B;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .faq-answer ul {
+            padding: 0 32px 24px 52px;
+            margin: 0;
+            color: #64748B;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .faq-answer li {
+            margin-bottom: 8px;
+        }
+
+        .faq-answer li:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            .faq-section {
+                padding: 60px 16px;
+            }
+
+            .faq-section h2 {
+                font-size: 36px;
+            }
+
+            .section-description {
+                font-size: 16px;
+                margin-bottom: 32px;
+            }
+
+            .faq-question {
+                padding: 16px;
+                font-size: 16px;
+            }
+
+            .faq-answer p,
+            .faq-answer ul {
+                padding: 16px 24px;
+                font-size: 14px;
+            }
+
+            .faq-answer ul {
+                padding-left: 44px;
+            }
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .unesco-btn {
+            position: absolute;
+            bottom: 1rem;
+            left: 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #2196F3, #1976D2);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 0 12px 12px 0;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(33, 150, 243, 0.25);
+            z-index: 10;
+            border-left: 4px solid #FFC107;
+        }
+
+        .unesco-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -4px;
+            width: 4px;
+            height: 100%;
+            background: #FFC107;
+            transform-origin: bottom;
+            transition: transform 0.3s ease;
+        }
+
+        .unesco-btn:hover {
+            transform: translateX(5px);
+            box-shadow: 0 6px 20px rgba(33, 150, 243, 0.35);
+        }
+
+        .unesco-btn:hover::before {
+            transform: scaleY(1.1);
+        }
+
+        .unesco-btn i {
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .unesco-btn:hover i {
+            transform: translateX(3px);
+        }
+
+        @media (max-width: 768px) {
+            .unesco-btn {
+                position: static;
+                margin: 20px auto 0;
+                padding: 12px 24px;
+                font-size: 0.9rem;
+                border-radius: 12px;
+                transform: none;
+            }
+
+            .unesco-btn::before {
+                display: none;
+            }
+
+            .unesco-btn:hover {
+                transform: translateY(-2px);
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .help-project {
+            padding: 80px 0;
+            background: #F8FAFC;
+        }
+
+        .help-project-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .help-project h2 {
+            color: #2196F3;
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .help-project-description {
+            color: #64748B;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 48px;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #1E293B;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #E2E8F0;
+            border-radius: 8px;
+            font-size: 16px;
+            color: #1E293B;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #2196F3;
+            box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #2196F3, #1976D2);
+            color: white;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .help-project {
+                padding: 60px 16px;
+            }
+
+            .help-project h2 {
+                font-size: 36px;
+            }
+
+            .help-project-description {
+                font-size: 16px;
+                margin-bottom: 32px;
+            }
+
+            .contact-form {
+                padding: 24px;
+            }
+        }
+    </style>
+
+    <style>
+        .video-section {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .video-section h2 {
+            color: #2196F3;
+            font-size: 48px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .video-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .video-section {
+                padding: 60px 16px;
+            }
+
+            .video-section h2 {
+                font-size: 36px;
+            }
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -1168,6 +2121,11 @@
         <p class="lang-uk">Знайди ідеальне місце для подорожі в Україні на основі твоїх інтересів</p>
         <p class="lang-en" style="display: none;">Find your perfect travel destination in Ukraine based on your interests</p>
         <button class="language-switcher" id="lang-switch">English</button>
+        <a href="#donate" class="donate-btn">
+            <i class="fab fa-bitcoin"></i>
+            <span class="lang-uk">Донат на Україну</span>
+            <span class="lang-en" style="display: none;">Donate to Ukraine</span>
+        </a>
     </header>
     
     <div class="container">
@@ -1248,7 +2206,549 @@
             </div>
         </section>
     </div>
-    
+
+    <section class="about-us" id="about-us">
+        <div class="container">
+            <div class="about-us-content">
+                <div class="about-us-text">
+                    <h2 class="lang-uk">Про нас</h2>
+                    <h2 class="lang-en" style="display: none;">About Us</h2>
+                    <p class="lang-uk">
+                        Ukraine365 - це інноваційний проект, створений для того, щоб допомогти вам відкрити неймовірну красу та багату культурну спадщину України. Ми віримо, що кожен куточок нашої країни має свою унікальну історію та чарівність.
+                    </p>
+                    <p class="lang-uk">
+                        Наша місія - зробити подорожі Україною доступними, безпечними та незабутніми. Ми ретельно відбираємо та перевіряємо кожне місце, оцінюємо рівень безпеки та актуальність інформації, щоб ви могли спланувати свою подорож з упевненістю.
+                    </p>
+                    <p class="lang-en" style="display: none;">
+                        Ukraine365 is an innovative project designed to help you discover the incredible beauty and rich cultural heritage of Ukraine. We believe that every corner of our country has its own unique history and charm.
+                    </p>
+                    <p class="lang-en" style="display: none;">
+                        Our mission is to make traveling in Ukraine accessible, safe, and unforgettable. We carefully select and verify each location, assess the security level, and keep information up-to-date so you can plan your journey with confidence.
+                    </p>
+                </div>
+                <div class="about-us-features">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="lang-uk">Безпека передусім</h3>
+                        <h3 class="lang-en" style="display: none;">Safety First</h3>
+                        <p class="lang-uk">Постійний моніторинг безпеки та оновлення інформації про кожне місце</p>
+                        <p class="lang-en" style="display: none;">Continuous safety monitoring and updates for each location</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-route"></i>
+                        </div>
+                        <h3 class="lang-uk">Персоналізовані маршрути</h3>
+                        <h3 class="lang-en" style="display: none;">Personalized Routes</h3>
+                        <p class="lang-uk">Унікальні рекомендації на основі ваших інтересів та вподобань</p>
+                        <p class="lang-en" style="display: none;">Unique recommendations based on your interests and preferences</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="lang-uk">Зручний інтерфейс</h3>
+                        <h3 class="lang-en" style="display: none;">User-Friendly Interface</h3>
+                        <p class="lang-uk">Простий та інтуїтивний дизайн для легкого планування подорожей</p>
+                        <p class="lang-en" style="display: none;">Simple and intuitive design for easy travel planning</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <h3 class="lang-uk">Інтерактивна карта</h3>
+                        <h3 class="lang-en" style="display: none;">Interactive Map</h3>
+                        <p class="lang-uk">Зручна карта з позначками безпечних місць та туристичних локацій</p>
+                        <p class="lang-en" style="display: none;">Convenient map with markers for safe places and tourist locations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="donate" class="donate-section">
+        <div class="container">
+            <div class="donate-content">
+                <h2 class="lang-uk">Підтримати Україну</h2>
+                <h2 class="lang-en" style="display: none;">Support Ukraine</h2>
+                <p class="lang-uk">
+                    Ваша підтримка допоможе нам розвивати проект та робити подорожі Україною ще доступнішими та безпечнішими.
+                </p>
+                <p class="lang-en" style="display: none;">
+                    Your support will help us develop the project and make traveling in Ukraine even more accessible and safer.
+                </p>
+
+                <div class="currency-selector">
+                    <button class="currency-btn active" data-currency="bitcoin">
+                        <i class="fab fa-bitcoin"></i>
+                        <span class="lang-uk">Bitcoin</span>
+                        <span class="lang-en" style="display: none;">Bitcoin</span>
+                    </button>
+                    <button class="currency-btn" data-currency="ethereum">
+                        <i class="fab fa-ethereum"></i>
+                        <span class="lang-uk">Ethereum</span>
+                        <span class="lang-en" style="display: none;">Ethereum</span>
+                    </button>
+                    <button class="currency-btn" data-currency="bnb">
+                        <span class="lang-uk">BNB</span>
+                        <span class="lang-en" style="display: none;">BNB</span>
+                    </button>
+                    <button class="currency-btn" data-currency="solana">
+                        <span class="lang-uk">Solana</span>
+                        <span class="lang-en" style="display: none;">Solana</span>
+                    </button>
+                    <button class="currency-btn" data-currency="tron">
+                        <span class="lang-uk">TRON</span>
+                        <span class="lang-en" style="display: none;">TRON</span>
+                    </button>
+                    <button class="currency-btn" data-currency="usdt-trc20">
+                        <i class="fas fa-dollar-sign"></i>
+                        <span class="lang-uk">USDT (TRC20)</span>
+                        <span class="lang-en" style="display: none;">USDT (TRC20)</span>
+                    </button>
+                    <button class="currency-btn" data-currency="usdt-erc20">
+                        <i class="fas fa-dollar-sign"></i>
+                        <span class="lang-uk">USDT (ERC20)</span>
+                        <span class="lang-en" style="display: none;">USDT (ERC20)</span>
+                    </button>
+                </div>
+
+                <div class="donate-cards-container">
+                    <div class="donate-card active" data-currency="bitcoin">
+                        <div class="donate-icon">
+                            <i class="fab fa-bitcoin"></i>
+                        </div>
+                        <h3>Bitcoin</h3>
+                        <div class="wallet-address">bc1q7dcz3mcxv3aevd3zmshg7sq7830rcvwcd60exg</div>
+                        <button class="copy-address-btn">
+                            <i class="fas fa-copy"></i>
+                            <span class="lang-uk">Копіювати адресу</span>
+                            <span class="lang-en" style="display: none;">Copy address</span>
+                        </button>
+                    </div>
+
+                    <div class="donate-card" data-currency="ethereum">
+                        <div class="donate-icon">
+                            <i class="fab fa-ethereum"></i>
+                        </div>
+                        <h3>Ethereum</h3>
+                        <div class="wallet-address">0xb8671Df7c31c16161D4F347991e6225490e222d9</div>
+                        <button class="copy-address-btn">
+                            <i class="fas fa-copy"></i>
+                            <span class="lang-uk">Копіювати адресу</span>
+                            <span class="lang-en" style="display: none;">Copy address</span>
+                        </button>
+                    </div>
+
+                    <div class="donate-card" data-currency="bnb">
+                        <div class="donate-icon">
+                            BNB
+                        </div>
+                        <h3>BNB</h3>
+                        <div class="wallet-address">bnb1tlj3kln35d6yf3gjtggp9xfcw26zwhw8yagaef</div>
+                        <button class="copy-address-btn">
+                            <i class="fas fa-copy"></i>
+                            <span class="lang-uk">Копіювати адресу</span>
+                            <span class="lang-en" style="display: none;">Copy address</span>
+                        </button>
+                    </div>
+
+                    <div class="donate-card" data-currency="solana">
+                        <div class="donate-icon">
+                            SOL
+                        </div>
+                        <h3>Solana</h3>
+                        <div class="wallet-address">2Wc2BD7p2LAF6HPY796R8Go2rkLB3YSXQLqEDrtfeyAZ</div>
+                        <button class="copy-address-btn">
+                            <i class="fas fa-copy"></i>
+                            <span class="lang-uk">Копіювати адресу</span>
+                            <span class="lang-en" style="display: none;">Copy address</span>
+                        </button>
+                    </div>
+
+                    <div class="donate-card" data-currency="tron">
+                        <div class="donate-icon">
+                            TRX
+                        </div>
+                        <h3>TRON</h3>
+                        <div class="wallet-address">TPEbv5JxXSHw5eJcnchnnhu2jXjD29bZrg</div>
+                        <button class="copy-address-btn">
+                            <i class="fas fa-copy"></i>
+                            <span class="lang-uk">Копіювати адресу</span>
+                            <span class="lang-en" style="display: none;">Copy address</span>
+                        </button>
+                    </div>
+
+                    <div class="donate-card" data-currency="usdt-trc20">
+                        <div class="donate-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <h3>USDT (TRC20)</h3>
+                        <div class="wallet-address">TPEbv5JxXSHw5eJcnchnnhu2jXjD29bZrg</div>
+                        <button class="copy-address-btn">
+                            <i class="fas fa-copy"></i>
+                            <span class="lang-uk">Копіювати адресу</span>
+                            <span class="lang-en" style="display: none;">Copy address</span>
+                        </button>
+                    </div>
+
+                    <div class="donate-card" data-currency="usdt-erc20">
+                        <div class="donate-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <h3>USDT (ERC20)</h3>
+                        <div class="wallet-address">0xb8671Df7c31c16161D4F347991e6225490e222d9</div>
+                        <button class="copy-address-btn">
+                            <i class="fas fa-copy"></i>
+                            <span class="lang-uk">Копіювати адресу</span>
+                            <span class="lang-en" style="display: none;">Copy address</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="useful-links" id="useful-links">
+        <div class="container">
+            <div class="useful-links-content">
+                <h2 class="lang-uk">Корисні посилання</h2>
+                <h2 class="lang-en" style="display: none;">Useful Links</h2>
+                <p class="lang-uk">
+                    Інформація та сервіси, які допоможуть вам спланувати подорож Україною
+                </p>
+                <p class="lang-en" style="display: none;">
+                    Information and services to help you plan your trip to Ukraine
+                </p>
+
+                <div class="links-grid">
+                    <a href="https://visitukraine.today/uk/ukraine/country" class="link-card" target="_blank">
+                        <div class="link-content">
+                            <div class="link-icon">
+                                <i class="fas fa-passport"></i>
+                            </div>
+                            <h3 class="lang-uk">Правила в'їзду в Україну</h3>
+                            <h3 class="lang-en" style="display: none;">Entry Rules to Ukraine</h3>
+                            <p class="lang-uk">Актуальна інформація про правила в'їзду, необхідні документи та обмеження</p>
+                            <p class="lang-en" style="display: none;">Current information about entry rules, required documents and restrictions</p>
+                        </div>
+                        <div class="link-btn">
+                            <span class="lang-uk">Дізнатись більше</span>
+                            <span class="lang-en" style="display: none;">Learn More</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </a>
+
+                    <a href="https://visitukraine.today/uk/bookings" class="link-card" target="_blank">
+                        <div class="link-content">
+                            <div class="link-icon">
+                                <i class="fas fa-ticket-alt"></i>
+                            </div>
+                            <h3 class="lang-uk">Пошук квитків</h3>
+                            <h3 class="lang-en" style="display: none;">Ticket Search</h3>
+                            <p class="lang-uk">Бронювання квитків на автобус</p>
+                            <p class="lang-en" style="display: none;">Book train, bus and plane tickets</p>
+                        </div>
+                        <div class="link-btn">
+                            <span class="lang-uk">Знайти квитки</span>
+                            <span class="lang-en" style="display: none;">Find Tickets</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </a>
+
+                    <a href="https://visitukraine.today/uk/hotels" class="link-card" target="_blank">
+                        <div class="link-content">
+                            <div class="link-icon">
+                                <i class="fas fa-hotel"></i>
+                            </div>
+                            <h3 class="lang-uk">Пошук готелів</h3>
+                            <h3 class="lang-en" style="display: none;">Hotel Search</h3>
+                            <p class="lang-uk">Зручний пошук та бронювання готелів по всій Україні</p>
+                            <p class="lang-en" style="display: none;">Convenient search and booking of hotels throughout Ukraine</p>
+                        </div>
+                        <div class="link-btn">
+                            <span class="lang-uk">Знайти готель</span>
+                            <span class="lang-en" style="display: none;">Find Hotel</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <h2 class="lang-uk">Поширені запитання</h2>
+            <h2 class="lang-en" style="display: none;">Frequently Asked Questions</h2>
+            <p class="section-description lang-uk">Відповіді на найпоширеніші запитання про подорожі в Україну</p>
+            <p class="section-description lang-en" style="display: none;">Answers to the most common questions about traveling to Ukraine</p>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span class="lang-uk">Які COVID-документи потрібно мати зараз із собою при в'їзді до України?</span>
+                        <span class="lang-en" style="display: none;">What COVID documents do I need to have when entering Ukraine now?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="lang-uk">З 1-го липня 2023 року влада України скасувала карантин та решту обмежень, запроваджених через пандемію COVID-19. Відтепер для в'їзду в Україну Вам не потрібно надавати докази вакцинації, негативний результат ПЛР-тесту чи носити захисну маску.</p>
+                        <p class="lang-en" style="display: none;">As of July 1, 2023, the Ukrainian authorities have lifted quarantine and other restrictions imposed due to the COVID-19 pandemic. You no longer need to provide proof of vaccination, negative PCR test results, or wear a protective mask to enter Ukraine.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span class="lang-uk">Чи безпечно відвідувати Україну в умовах війни?</span>
+                        <span class="lang-en" style="display: none;">Is it safe to visit Ukraine during wartime?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="lang-uk">Останнім часом, в Україні збільшилась кількість іноземних мандрівників. Вони відвідують державу з різними цілями: волонтерська діяльність, участь в гуманітарних програмах, знімання репортажів або документальних фільмів, створення бізнесу тощо. Стовідсотково безпечних міст в Україні наразі не існує. І хоча основні бойові дії зосереджені у східній і південній частині України, територія всієї країни потрапляє під регулярні ракетні обстріли.</p>
+                        <p class="lang-en" style="display: none;">Recently, the number of foreign travelers in Ukraine has increased. They visit the country for various purposes: volunteering, participating in humanitarian programs, filming reports or documentaries, starting businesses, etc. There are currently no 100% safe cities in Ukraine. And although the main fighting is concentrated in the eastern and southern parts of Ukraine, the entire country's territory is subject to regular missile attacks.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span class="lang-uk">Які є рекомендації для безпеки перед поїздкою в Україну?</span>
+                        <span class="lang-en" style="display: none;">What are the safety recommendations before traveling to Ukraine?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="lang-uk">
+                            <p>Ось декілька важливих порад:</p>
+                            <ul>
+                                <li>Зробіть електронні копії всіх документів, збережіть їх на своєму електронному пристрої, щоб завжди мати доступ до них.</li>
+                                <li>Заздалегідь дізнайтесь час комендантської години в регіоні, куди ви збираєтесь.</li>
+                                <li>Встановіть додаток на смартфон "Повітряна тривога" та при отриманні сигналу – одразу пройдіть до найближчого укриття. Так само необхідно діяти якщо Ви почули відповідний сигнал на вулиці.</li>
+                                <li>При виборі готелю враховуйте наявність бомбосховищ.</li>
+                                <li>Проінформуйте рідних та друзів про свій маршрут та підтримуйте з ними зв'язок.</li>
+                                <li>Оформіть медичне страхування з розширеним покриттям.</li>
+                            </ul>
+                        </div>
+                        <div class="lang-en" style="display: none;">
+                            <p>Here are several important tips:</p>
+                            <ul>
+                                <li>Make electronic copies of all documents and save them on your electronic device to always have access to them.</li>
+                                <li>Find out the curfew times in the region you're planning to visit in advance.</li>
+                                <li>Install the "Air Raid Alert" app on your smartphone and immediately proceed to the nearest shelter when receiving an alert. The same action is necessary if you hear the corresponding signal on the street.</li>
+                                <li>When choosing a hotel, consider the availability of bomb shelters.</li>
+                                <li>Inform your family and friends about your route and maintain contact with them.</li>
+                                <li>Get medical insurance with extended coverage.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span class="lang-uk">Чи можу я відвідати Україну з простроченою посвідкою на проживання?</span>
+                        <span class="lang-en" style="display: none;">Can I visit Ukraine with an expired residence permit?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="lang-uk">Так. Іноземці (окрім громадян російської федерації) та особи без громадянства мають право в'їзду та законного перебування в Україні, якщо мають посвідку на тимчасове або постійне проживання, строк дії якої закінчився або які підлягають обміну після 24 лютого 2022 року.</p>
+                        <p class="lang-en" style="display: none;">Yes. Foreigners (except citizens of the russian federation) and stateless persons have the right to enter and legally stay in Ukraine if they have a temporary or permanent residence permit that has expired or is subject to exchange after February 24, 2022.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span class="lang-uk">Чи потрібно зареєструвати своє перебування в Україні іноземцям?</span>
+                        <span class="lang-en" style="display: none;">Do foreigners need to register their stay in Ukraine?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="lang-uk">Ні, якщо термін перебування в країні становить не більше 90 днів. Якщо ж іноземець приїхав на термін більший, ніж 90 діб, в такому випадку йому потрібна посвідка на тимчасове або постійне проживання, а також реєстрація за місцем проживання.</p>
+                        <p class="lang-en" style="display: none;">No, if the stay in the country does not exceed 90 days. However, if a foreigner arrives for a period longer than 90 days, they need a temporary or permanent residence permit, as well as registration at their place of residence.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span class="lang-uk">Як відвідати Україну з домашніми тваринами?</span>
+                        <span class="lang-en" style="display: none;">How to visit Ukraine with pets?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="lang-uk">
+                            <p>Наразі в'їзд в Україну з домашніми тваринами відбувається за спрощеною процедурою. Власники тварин повинні надати на митниці наступні документи:</p>
+                            <ul>
+                                <li>ветеринарний паспорт європейського зразка або сертифікат про стан здоров'я тварини;</li>
+                                <li>підтвердження діючої вакцинації від сказу;</li>
+                                <li>документ про чіпування тварини.</li>
+                            </ul>
+                        </div>
+                        <div class="lang-en" style="display: none;">
+                            <p>Currently, entry to Ukraine with pets follows a simplified procedure. Pet owners must provide the following documents at customs:</p>
+                            <ul>
+                                <li>European-style veterinary passport or animal health certificate;</li>
+                                <li>proof of valid rabies vaccination;</li>
+                                <li>document confirming the animal's microchipping.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="video-section" id="video">
+        <div class="container">
+            <h2>
+                <span class="lang-uk">ЮНЕСКО в Україні</span>
+                <span class="lang-en" style="display: none;">UNESCO in Ukraine</span>
+            </h2>
+            <p class="section-description">
+                <span class="lang-uk">Дізнайтеся більше про пам'ятки ЮНЕСКО на території України</span>
+                <span class="lang-en" style="display: none;">Learn more about UNESCO sites in Ukraine</span>
+            </p>
+            
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <iframe 
+                        src="https://www.youtube.com/embed/z0A92nl9Wcs?si=O-b_lOy76O6QbnkL&cc_load_policy=0&cc_lang_pref=uk" 
+                        title="YouTube video about Ukraine" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="help-project" id="help-project">
+        <div class="container">
+            <div class="help-project-content">
+                <h2>
+                    <span class="lang-uk">Допомогти проєкту</span>
+                    <span class="lang-en" style="display: none;">Help the Project</span>
+                </h2>
+                <p class="help-project-description">
+                    <span class="lang-uk">Маєте цікаві місця для подорожей в Україні? Поділіться з нами, і ми додамо їх до нашої бази даних!</span>
+                    <span class="lang-en" style="display: none;">Have interesting travel destinations in Ukraine? Share them with us, and we'll add them to our database!</span>
+                </p>
+                
+                <form class="contact-form" action="https://formspree.io/f/mqakpkbv" method="POST">
+                    <div class="form-group">
+                        <label>
+                            <span class="lang-uk">Ваше ім'я</span>
+                            <span class="lang-en" style="display: none;">Your Name</span>
+                        </label>
+                        <input type="text" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>
+                            <span class="lang-uk">Електронна пошта</span>
+                            <span class="lang-en" style="display: none;">Email</span>
+                        </label>
+                        <input type="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>
+                            <span class="lang-uk">Назва місця</span>
+                            <span class="lang-en" style="display: none;">Place Name</span>
+                        </label>
+                        <input type="text" name="place" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>
+                            <span class="lang-uk">Розташування</span>
+                            <span class="lang-en" style="display: none;">Location</span>
+                        </label>
+                        <input type="text" name="location" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>
+                            <span class="lang-uk">Опис місця</span>
+                            <span class="lang-en" style="display: none;">Place Description</span>
+                        </label>
+                        <textarea name="description" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <span class="lang-uk">Надіслати</span>
+                        <span class="lang-en" style="display: none;">Submit</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scroll to donate section
+        document.querySelector('.donate-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('#donate').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
+
+        // Currency selector functionality
+        document.querySelectorAll('.currency-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons and cards
+                document.querySelectorAll('.currency-btn').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.donate-card').forEach(card => card.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding card
+                this.classList.add('active');
+                document.querySelector(`.donate-card[data-currency="${this.dataset.currency}"]`).classList.add('active');
+            });
+        });
+
+        // Copy address functionality
+        document.querySelectorAll('.copy-address-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const address = this.previousElementSibling.textContent;
+                navigator.clipboard.writeText(address).then(() => {
+                    const originalText = this.querySelector('span:not([style*="display: none"])').textContent;
+                    this.classList.add('copied');
+                    this.querySelector('span.lang-uk').textContent = 'Скопійовано!';
+                    this.querySelector('span.lang-en').textContent = 'Copied!';
+                    setTimeout(() => {
+                        this.classList.remove('copied');
+                        this.querySelector('span.lang-uk').textContent = 'Копіювати адресу';
+                        this.querySelector('span.lang-en').textContent = 'Copy address';
+                    }, 2000);
+                });
+            });
+        });
+
+        // FAQ Accordion functionality
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const answer = button.nextElementSibling;
+                
+                // Close all other answers
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) {
+                        item.classList.remove('active');
+                        item.querySelector('.faq-answer').style.maxHeight = null;
+                    }
+                });
+                
+                // Toggle current answer
+                faqItem.classList.toggle('active');
+                if (faqItem.classList.contains('active')) {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                } else {
+                    answer.style.maxHeight = null;
+                }
+            });
+        });
+    </script>
+
     <footer>
         <div class="footer-container">
             <div class="footer-logo">
@@ -1262,9 +2762,49 @@
                     <h4 class="lang-uk">Навігація</h4>
                     <h4 class="lang-en" style="display: none;">Navigation</h4>
                     <ul>
-                        <li><a href="#" class="lang-uk">Головна</a><a href="#" class="lang-en" style="display: none;">Home</a></li>
-                        <li><a href="#" class="lang-uk">Про нас</a><a href="#" class="lang-en" style="display: none;">About Us</a></li>
-                        <li><a href="#" class="lang-uk">Допомогти проєкту</a><a href="#" class="lang-en" style="display: none;">Support the Project</a></li>
+                        <li>
+                            <a href="#" class="nav-link">
+                                <span class="lang-uk">Головна</span>
+                                <span class="lang-en" style="display: none;">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#about-us" class="nav-link">
+                                <span class="lang-uk">Про нас</span>
+                                <span class="lang-en" style="display: none;">About Us</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#donate" class="nav-link">
+                                <span class="lang-uk">Задонатити</span>
+                                <span class="lang-en" style="display: none;">Donate</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#useful-links" class="nav-link">
+                                <span class="lang-uk">Корисні посилання</span>
+                                <span class="lang-en" style="display: none;">Useful Links</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#faq" class="nav-link">
+                                <span class="lang-uk">Поширені запитання</span>
+                                <span class="lang-en" style="display: none;">FAQ</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#video" class="nav-link">
+                                <span class="lang-uk">ЮНЕСКО в Україні</span>
+                                <span class="lang-en" style="display: none;">UNESCO in Ukraine</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#help-project" class="nav-link">
+                                <span class="lang-uk">Допомогти проєкту</span>
+                                <span class="lang-en" style="display: none;">Help the Project</span>
+                            </a>
+                        </li>
                         
                     </ul>
                 </div>
@@ -1465,7 +3005,7 @@
                 name_en: "Bakota",
                 description: "Затоплене село з мальовничими краєвидами та печерним монастирем.",
                 description_en: "Flooded village with picturesque landscapes and a cave monastery.",
-                image: "https://vidviday.ua/blog/wp-content/uploads/2017/09/Bakota-panorama-03-Int.jpg",
+                image: "https://legendaryswim.com/sites/default/files/styles/titlebg6/public/2021-07/bakota_2021_2.jpg?itok=Zu7h1Wne",
                 interests: ["nature", "adventure"],
                 location: "Хмельниччина",
                 location_en: "Khmelnytskyi region",
@@ -1705,7 +3245,7 @@
                 filteredPlaces.forEach(place => {
                     // Для кожного місця обчислюємо відстань до лінії фронту
                     const distance = calculateDistanceToFrontLine([place.coordinates[1], place.coordinates[0]]);
-                    const safety = getSafetyLevel(distance);
+                    const safety = getSafetyLevel(distance, currentLanguage === 'uk' ? place.name : place.name_en);
                     
                     // Створення картки місця
                     const placeCard = document.createElement('div');
@@ -2153,7 +3693,7 @@
                     try {
                         // Для кожного місця обчислюємо відстань до лінії фронту
                         const distance = calculateDistanceToFrontLine([place.coordinates[1], place.coordinates[0]]);
-                        const safety = getSafetyLevel(distance);
+                        const safety = getSafetyLevel(distance, currentLanguage === 'uk' ? place.name : place.name_en);
                         
                         // Створюємо маркер з відповідним кольором
                         const markerIcon = L.divIcon({
@@ -2218,7 +3758,25 @@
         }
         
         // Функція для визначення рівня безпеки місця
-        function getSafetyLevel(distance) {
+        function getSafetyLevel(distance, locationName) {
+            // Список міст із середнім рівнем безпеки
+            const mediumSafetyLocations = [
+                'Полтава', 'Poltava',
+                'Чернігів', 'Chernihiv',
+                'Київ', 'Kyiv',
+                'Одеса', 'Odesa',
+                'Дендропарк Софіївка', 'Dendropark Sofiivka'
+            ];
+
+            // Перевіряємо, чи поточне місце знаходиться у списку міст із середнім рівнем безпеки
+            if (locationName && mediumSafetyLocations.includes(locationName)) {
+                return {
+                    level: 'medium',
+                    text: currentLanguage === 'uk' ? 'Середній рівень безпеки' : 'Medium safety level'
+                };
+            }
+
+            // Стандартна логіка для інших місць
             if (distance >= 150) {
                 return {
                     level: 'high',
@@ -2300,8 +3858,8 @@
                     "id": 3,
                     "name": "Київ",
                     "name_en": "Kyiv",
-                    "description": "Столиця України, місто з багатою історією та архітектурою.",
-                    "description_en": "The capital of Ukraine, a city with a rich history and architecture.",
+                    "description": "Столиця України з багатою історією та сучасною культурою.",
+                    "description_en": "The capital of Ukraine with rich history and modern culture.",
                     "detailed_info": {
                         "uk": {
                             "history": "Київ був заснований в IX столітті. Місто відоме своїми історичними пам'ятками, такими як Києво-Печерська лавра та Софійський собор.",
@@ -2469,7 +4027,7 @@
                             "features": "Місто відоме своїми історичними пам'ятками, музеями та культурними подіями.",
                             "best_time": "Найкращий час для відвідування - з травня по вересень, коли погода тепла.",
                             "activities": "Екскурсії, відвідування музеїв, фестивалі.",
-                            "tips": "Взяти з собою зручне взуття, фотоапарат та готівку (не скрізь приймають картки). Плануйте щонайменше 1–2 дні, щоб побачити основні пам’ятки та насолодитися атмосферою. Обов'язково відвідайте фестивалі у Полтаві, наприклад гастро-фест Полтавські галушки"
+                            "tips": "Взяти з собою зручне взуття, фотоапарат та готівку (не скрізь приймають картки). Плануйте щонайменше 1–2 дні, щоб побачити основні пам'ятки та насолодитися атмосферою. Обов'язково відвідайте фестивалі у Полтаві, наприклад гастро-фест Полтавські галушки"
                         },
                         "en": {
                             "history": "Poltava was founded in the 9th century.",
@@ -2545,7 +4103,7 @@
                             "features": "The village is located in a picturesque area of the Carpathians, surrounded by forests and mountain peaks.",
                             "best_time": "The best time to visit is from June to September, when the weather is warm.",
                             "activities": "Relaxation in hot tubs, excursions, photography.",
-                            "tips": "Bring comfortable shoes and a camera. Hot mineral water tubs are a popular attraction, so it’s worth booking in advance, especially during the high tourist season. The weather in the mountains can change very quickly, so be prepared for changing weather conditions."
+                            "tips": "Bring comfortable shoes and a camera. Hot mineral water tubs are a popular attraction, so it's worth booking in advance, especially during the high tourist season. The weather in the mountains can change very quickly, so be prepared for changing weather conditions."
                         }
                     }
                 },
@@ -2561,7 +4119,7 @@
                             "features": "Місто відоме своїми історичними пам'ятками, церквами, монастирями та архітектурними стилями.",
                             "best_time": "Найкращий час для відвідування - з квітня по жовтень, коли погода тепла.",
                             "activities": "Екскурсії, відвідування музеїв, фотографування, дегустація кави та шоколаду",
-                            "tips": "Взяти з собою зручне взуття та фотоапарат. Львів відомий своїми кав'ярнями та шоколадними магазинами, тому не забудьте спробувати місцеві делікатеси. Скористайтесь гідом або аудіогідом — Львів має багату історію, і з гідом ви краще зрозумієте контекст пам’яток. Заплануйте візит на тематичні фестивалі — у Львові часто проходять фестивалі кави, шоколаду, музики, вуличної їжі."
+                            "tips": "Взяти з собою зручне взуття та фотоапарат. Львів відомий своїми кав'ярнями та шоколадними магазинами, тому не забудьте спробувати місцеві делікатеси. Скористайтесь гідом або аудіогідом — Львів має багату історію, і з гідом ви краще зрозумієте контекст пам'яток. Заплануйте візит на тематичні фестивалі — у Львові часто проходять фестивалі кави, шоколаду, музики, вуличної їжі."
                         },
                         "en": {
                             "history": "Lviv was founded in the 13th century.",
@@ -2637,7 +4195,7 @@
                             "features": "The castle is known for its architectural features, historical exhibits, and picturesque landscapes.",
                             "best_time": "The best time to visit is from April to October, when the weather is warm.",
                             "activities": "Guided tours, visiting museums, photography, researching history.",
-                            "tips": "Bring comfortable shoes and a camera. Choose a guided tour — you’ll learn more about the history of the castle and the Volyn region."
+                            "tips": "Bring comfortable shoes and a camera. Choose a guided tour — you'll learn more about the history of the castle and the Volyn region."
                         }
                     }
                 }
@@ -2781,6 +4339,28 @@
                     map.setView([49.0, 31.0], 6);
                 }
             }
+        });
+    </script>
+    <script>
+        // Add smooth scrolling to all footer navigation links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
         });
     </script>
 </body>
