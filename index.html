@@ -1319,11 +1319,15 @@
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
+            animation: pulse 3s ease-in-out infinite;
         }
 
         .donate-btn:hover {
             background: rgba(255, 255, 255, 0.25);
             transform: translateY(-2px);
+            animation: none;
+            transform: scale(1.03);
+            transition: all 0.3s ease;
         }
 
         .donate-btn i {
@@ -2063,6 +2067,55 @@
                 padding: 24px;
             }
         }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(33, 150, 243, 0.3);
+            }
+            
+            50% {
+                transform: scale(1.03);
+                box-shadow: 0 0 0 8px rgba(33, 150, 243, 0);
+            }
+            
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(33, 150, 243, 0);
+            }
+        }
+
+        .donate-btn {
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        .donate-btn:hover {
+            animation: none;
+            transform: scale(1.03);
+            transition: all 0.3s ease;
+        }
+
+        .bitcoin-icon {
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            background: #F7931A;
+            border-radius: 50%;
+            position: relative;
+            transform: translateY(2px);
+            margin: 0 0.05em;
+        }
+        
+        .bitcoin-icon::before {
+            content: '₿';
+            color: white;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: bold;
+            font-size: 0.7em;
+        }
     </style>
 
     <style>
@@ -2268,16 +2321,16 @@
         </div>
     </section>
 
-    <section id="donate" class="donate-section">
+    <section id="donate" class="donate-section" style="background-color: #FBFDFD;">
         <div class="container">
             <div class="donate-content">
-                <h2 class="lang-uk">Підтримати Україну</h2>
-                <h2 class="lang-en" style="display: none;">Support Ukraine</h2>
+                <h2 class="lang-uk">Підтримати Україну Крипт<span class="bitcoin-icon"></span>ю</h2>
+                <h2 class="lang-en" style="display: none;">Support Ukraine with Crypt<span class="bitcoin-icon"></span></h2>
                 <p class="lang-uk">
-                    Ваша підтримка допоможе нам розвивати проект та робити подорожі Україною ще доступнішими та безпечнішими.
+                    Дякуємо за вашу підтримку! Кожен внесок наближає нашу перемогу, рятує життя та підтримує тих, хто цього потребує найбільше.
                 </p>
                 <p class="lang-en" style="display: none;">
-                    Your support will help us develop the project and make traveling in Ukraine even more accessible and safer.
+                    Thank you for your support! Every contribution brings us closer to victory, saves lives and supports those who need it most.
                 </p>
 
                 <div class="currency-selector">
@@ -2411,7 +2464,7 @@
         </div>
     </section>
 
-    <section class="useful-links" id="useful-links">
+    <section class="useful-links" id="useful-links" style="background-color: #FBFDFD;">
         <div class="container">
             <div class="useful-links-content">
                 <h2 class="lang-uk">Корисні посилання</h2>
@@ -2479,7 +2532,7 @@
         </div>
     </section>
 
-    <section class="faq-section" id="faq">
+    <section class="faq-section" id="faq" style="background-color: #FBFDFD;">
         <div class="container">
             <h2 class="lang-uk">Поширені запитання</h2>
             <h2 class="lang-en" style="display: none;">Frequently Asked Questions</h2>
@@ -2596,7 +2649,7 @@
         </div>
     </section>
 
-    <section class="video-section" id="video">
+    <section class="video-section" id="video" style="background-color: #FBFDFD;">
         <div class="container">
             <h2>
                 <span class="lang-uk">ЮНЕСКО в Україні</span>
@@ -3765,7 +3818,7 @@
                 'Чернігів', 'Chernihiv',
                 'Київ', 'Kyiv',
                 'Одеса', 'Odesa',
-                'Дендропарк Софіївка', 'Dendropark Sofiivka'
+                'Дендропарк Софіївка', 'Arboretum Sofiyivka'
             ];
 
             // Перевіряємо, чи поточне місце знаходиться у списку міст із середнім рівнем безпеки
