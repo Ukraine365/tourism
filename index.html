@@ -1161,7 +1161,7 @@
 
         .about-us {
             padding: 6rem 0;
-            background: linear-gradient(135deg, var(--light) 0%, white 100%);
+            background: #F8FAFC;
             position: relative;
             overflow: hidden;
         }
@@ -1512,6 +1512,10 @@
             .donate-content h2 {
                 font-size: 36px;
             }
+            
+            .donate-content h2.lang-uk {
+                font-size: 2.2em !important; /* Override the inline style */
+            }
 
             .donate-content p {
                 font-size: 16px;
@@ -1529,6 +1533,21 @@
 
             .donate-card {
                 padding: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .donate-content h2 {
+                font-size: 32px;
+            }
+            
+            .donate-content h2.lang-uk {
+                font-size: 2em !important;
+            }
+            
+            .currency-btn {
+                padding: 6px 12px;
+                font-size: 13px;
             }
         }
 
@@ -1754,7 +1773,7 @@
 
         .faq-section {
             padding: 80px 0;
-            background: #fff;
+            background: #F8FAFC;
         }
 
         .faq-section h2 {
@@ -2116,12 +2135,23 @@
             font-weight: bold;
             font-size: 0.7em;
         }
+
+        .partner-name {
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            font-size: 48px;
+            color: #2196F3;
+            white-space: nowrap;
+            display: inline-block;
+            text-shadow: 0 2px 4px rgba(33, 150, 243, 0.2);
+            letter-spacing: 1px;
+        }
     </style>
 
     <style>
         .video-section {
             padding: 80px 0;
-            background: #fff;
+            background: #F8FAFC;
         }
 
         .video-section h2 {
@@ -2267,16 +2297,16 @@
                     <h2 class="lang-uk">Про нас</h2>
                     <h2 class="lang-en" style="display: none;">About Us</h2>
                     <p class="lang-uk">
-                        Ukraine365 - це інноваційний проект, створений для того, щоб допомогти вам відкрити неймовірну красу та багату культурну спадщину України. Ми віримо, що кожен куточок нашої країни має свою унікальну історію та чарівність.
+                        Ukraine365 - це інноваційний проєкт, створений для того, аби допомогти іноземцям відкрити неймовірну красу та багату культурну спадщину України. Ми віримо, що кожен куточок нашої країни має свою унікальну історію та чарівність. Число 365 у назві символізує те, наскільки багато красивих місць має Україна, що кожного дня протягом року можна відкривати щось нове. 
                     </p>
                     <p class="lang-uk">
-                        Наша місія - зробити подорожі Україною доступними, безпечними та незабутніми. Ми ретельно відбираємо та перевіряємо кожне місце, оцінюємо рівень безпеки та актуальність інформації, щоб ви могли спланувати свою подорож з упевненістю.
+                        Наша місія - залучити якомога більше іноземних туристів до України, зробивши їхню подорож безпечною та незабутньою. Ми ретельно відбираємо та перевіряємо кожне місце, оцінюємо рівень безпеки та актуальність інформації, щоб ви могли спланувати свою подорож з упевненістю.
                     </p>
                     <p class="lang-en" style="display: none;">
-                        Ukraine365 is an innovative project designed to help you discover the incredible beauty and rich cultural heritage of Ukraine. We believe that every corner of our country has its own unique history and charm.
+                        Ukraine365 is an innovative project created to help foreigners discover the incredible beauty and rich cultural heritage of Ukraine. We believe that every corner of our country has its own unique story and charm. The number 365 in the name symbolizes just how many beautiful places Ukraine has—enough to discover something new every single day of the year.
                     </p>
                     <p class="lang-en" style="display: none;">
-                        Our mission is to make traveling in Ukraine accessible, safe, and unforgettable. We carefully select and verify each location, assess the security level, and keep information up-to-date so you can plan your journey with confidence.
+                        Our mission is to attract as many foreign tourists to Ukraine as possible by making their journey safe and unforgettable. We carefully select and verify each location, assess safety levels and the relevance of information, so you can plan your trip with confidence.
                     </p>
                 </div>
                 <div class="about-us-features">
@@ -2321,16 +2351,184 @@
         </div>
     </section>
 
-    <section id="donate" class="donate-section" style="background-color: #FBFDFD;">
+    <section class="trusted-by" id="trusted-by">
+        <div class="container">
+            <div class="trusted-by-content">
+                <h2 class="lang-uk">Нам довіряють</h2>
+                <h2 class="lang-en" style="display: none;">Trusted by</h2>
+                
+                <div class="ticker-container">
+                    <div class="ticker-wrapper">
+                        <div class="ticker-track">
+                            <div class="partner-logo">
+                                <span class="partner-name">ALF</span>
+                            </div>
+                            <div class="partner-logo">
+                                <span class="partner-name">TPG</span>
+                            </div>
+                            <div class="partner-logo">
+                                <span class="partner-name">Join UP</span>
+                            </div>
+                            <div class="partner-logo">
+                                <span class="partner-name">Anex Tour</span>
+                            </div>
+                            <div class="partner-logo">
+                                <span class="partner-name">Coral Travel</span>
+                            </div>
+                            
+                            <!-- Duplicated for continuous scrolling -->
+                            <div class="partner-logo">
+                                <span class="partner-name">ALF</span>
+                            </div>
+                            <div class="partner-logo">
+                                <span class="partner-name">TPG</span>
+                            </div>
+                            <div class="partner-logo">
+                                <span class="partner-name">Join UP</span>
+                            </div>
+                            <div class="partner-logo">
+                                <span class="partner-name">Anex Tour</span>
+                            </div>
+                            <div class="partner-logo">
+                                <span class="partner-name">Coral Travel</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .trusted-by {
+            padding: 80px 0;
+            background: #F8FAFC;
+            overflow: hidden;
+        }
+        
+        .trusted-by-content {
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .trusted-by-content h2 {
+            font-size: 38px;
+            color: #1E293B;
+            margin-bottom: 60px;
+            font-weight: 600;
+        }
+        
+        .ticker-container {
+            width: 100%;
+            overflow: hidden;
+            padding: 20px 0 40px;
+            position: relative;
+        }
+        
+        .ticker-wrapper {
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .ticker-track {
+            display: flex;
+            align-items: center;
+            animation: ticker 40s linear infinite;
+            width: fit-content;
+            height: 100px;
+        }
+        
+        .ticker-track:hover {
+            animation-play-state: paused;
+        }
+        
+        @keyframes ticker {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        
+        .partner-logo {
+            width: auto;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 60px;
+            flex-shrink: 0;
+        }
+        
+        .partner-svg {
+            width: 100%;
+            height: 100%;
+        }
+        
+        @media (max-width: 992px) {
+            .partner-logo {
+                width: auto;
+                height: 90px;
+                margin: 0 40px;
+            }
+            
+            .partner-name {
+                font-size: 38px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .trusted-by {
+                padding: 60px 0;
+            }
+            
+            .trusted-by-content h2 {
+                font-size: 32px;
+                margin-bottom: 40px;
+            }
+            
+            .partner-logo {
+                width: auto;
+                height: 70px;
+                margin: 0 30px;
+            }
+            
+            .partner-name {
+                font-size: 34px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .partner-logo {
+                width: auto;
+                height: 60px;
+                margin: 0 20px;
+            }
+            
+            .partner-name {
+                font-size: 30px;
+                letter-spacing: 0.5px;
+            }
+            
+            .ticker-container {
+                padding: 10px 0 30px;
+            }
+        }
+    </style>
+
+    <section id="donate" class="donate-section" style="background-color: #F8FAFC;">
         <div class="container">
             <div class="donate-content">
                 <h2 class="lang-uk" style="font-size: 2.7em;">Підтримати Україну Крипт<span class="bitcoin-icon"></span>ю</h2>
                 <h2 class="lang-en" style="display: none;">Support Ukraine with Crypt<span class="bitcoin-icon"></span></h2>
                 <p class="lang-uk">
-                    Дякуємо за вашу підтримку! Кожен внесок наближає нашу перемогу, рятує життя та підтримує тих, хто цього потребує найбільше.
+                    Дякуємо за вашу підтримку! Кожен внесок наближає нашу перемогу, рятує життя та підтримує тих, хто цього потребує найбільше. Усі кошти надходять порталу <a href="https://visitukraine.today/uk/donation" target="_blank" style="color: #0066cc; text-decoration: none;  transition: all 0.3s ease;">VisitUkraine.Today</a>, який підтримує українців та потреби військових.
                 </p>
                 <p class="lang-en" style="display: none;">
-                    Thank you for your support! Every contribution brings us closer to victory, saves lives and supports those who need it most.
+                    Thank you for your support! Every contribution brings us closer to victory, saves lives and supports those who need it most. All funds go to the <a href="https://visitukraine.today/uk/donation" target="_blank" style="color: #0066cc; text-decoration: none;  transition: all 0.3s ease;">VisitUkraine.Today</a> platform, which supports Ukrainians and the needs of the military.
                 </p>
 
                 <div class="currency-selector">
@@ -2464,7 +2662,7 @@
         </div>
     </section>
 
-    <section class="useful-links" id="useful-links" style="background-color: #FBFDFD;">
+    <section class="useful-links" id="useful-links" style="background-color: #F8FAFC;">
         <div class="container">
             <div class="useful-links-content">
                 <h2 class="lang-uk">Корисні посилання</h2>
@@ -2532,7 +2730,7 @@
         </div>
     </section>
 
-    <section class="faq-section" id="faq" style="background-color: #FBFDFD;">
+    <section class="faq-section" id="faq" style="background-color: #F8FAFC;">
         <div class="container">
             <h2 class="lang-uk">Поширені запитання</h2>
             <h2 class="lang-en" style="display: none;">Frequently Asked Questions</h2>
@@ -2649,7 +2847,7 @@
         </div>
     </section>
 
-    <section class="video-section" id="video" style="background-color: #FBFDFD;">
+    <section class="video-section" id="video" style="background-color: #F8FAFC;">
         <div class="container">
             <h2>
                 <span class="lang-uk">ЮНЕСКО в Україні</span>
@@ -2933,7 +3131,7 @@
                 location: "Хмельниччина",
                 location_en: "Khmelnytskyi region",
                 rating: 4.8,
-                coordinates: [48.59855878912615, 26.34475371453334] 
+                coordinates: [48.59855878912615, 26.34475371453334]
             },
             {
                 id: 2,
@@ -4415,6 +4613,73 @@
                 }
             });
         });
+    </script>
+
+    <script>
+        // Змінна для зберігання обраного фільтру
+        let selectedAttractionFilter = 'all';
+        
+        // Знаходимо оригінальний обробник подій для кнопки пошуку
+        const originalFindButtonClickHandler = findButton.onclick;
+        
+        // Перезаписуємо обробник подій для кнопки "Знайти ідеальні місця"
+        findButton.onclick = function(event) {
+            // Зупиняємо стандартну поведінку
+            event.preventDefault();
+            
+            // Перевіряємо, чи обрані інтереси
+            if (selectedInterests.length === 0) {
+                // Якщо інтереси не обрані, показуємо повідомлення
+                const message = currentLanguage === 'uk' ? 
+                    'Будь ласка, оберіть хоча б один інтерес' : 
+                    'Please select at least one interest';
+                alert(message);
+                return;
+            }
+            
+            // Фільтруємо і показуємо місця напряму
+            filterPlaces();
+        };
+        
+        // Функція для фільтрації місць
+        function filterPlaces() {
+            // Отримуємо всі місця, які відповідають обраним інтересам
+            let allPlacesMatchingInterests = places.filter(place => {
+                return place.interests.some(interest => selectedInterests.includes(interest));
+            });
+            
+            // Фільтруємо місця за відстанню від лінії фронту
+            filteredPlaces = allPlacesMatchingInterests.filter(place => {
+                // Для кожного місця обчислюємо відстань до лінії фронту
+                const distance = calculateDistanceToFrontLine([place.coordinates[1], place.coordinates[0]]);
+                return distance >= minimumSafetyDistance;
+            });
+            
+            // Сортуємо місця за оцінкою
+            filteredPlaces.sort((a, b) => b.rating - a.rating);
+            
+            // Показуємо результати
+            resultsSection.classList.remove('hidden');
+            // Прокручуємо до результатів
+            resultsSection.scrollIntoView({ behavior: 'smooth' });
+            
+            // Показуємо кнопку для перегляду карти, якщо є хоча б одне місце
+            if (filteredPlaces.length > 0) {
+                viewMapBtn.classList.remove('hidden');
+                document.getElementById('view-map-btn-en').classList.remove('hidden');
+            } else {
+                viewMapBtn.classList.add('hidden');
+                document.getElementById('view-map-btn-en').classList.add('hidden');
+            }
+            
+            // Рендеримо рекомендації
+            renderRecommendations();
+        }
+        
+        // Переназначаємо обробник кліку для англійської кнопки
+        document.getElementById('find-button-en').onclick = function() {
+            findButton.click();
+        };
     </script>
 </body>
 </html>
